@@ -1,0 +1,13 @@
+/* TEAM */
+Maquetteur Extraordinaire: Chuck!
+Site: spacenomads.com
+Mastodon.social: @oneeyedman
+Location: Alcorcón.
+
+/* THANKS */
+Name: your name or url
+
+/* SITE */
+Last update: 2023/10/14 
+Standards: HTML, CSS, JS
+Software: GitHub, VS Code
