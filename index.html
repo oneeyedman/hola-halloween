@@ -2,20 +2,25 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="favicon.ico" />
+  <link rel="icon" href="favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="3600;url=./" />
+  <meta http-equiv="refresh" content="3600">
   <title>Hola, Halloween</title>
   <link rel="stylesheet" href="hola.css">
   <script src="hola.js" defer></script>
 </head>
 <body class="hola js-hola">
   <main class="hola__content">
-    <h1 class="hola__title">Hola, Halloween.</h1>
-    <p class="hola__output js__hola-output"><span class="sr-ony">Quedan </span>XX<span class="sr-only"> días.</span></p>
+    <hgroup class="hola__group">
+      <h1 class="hola__title">
+        <span class="hola__title-icon" aria-hidden="true">🎃</span>
+        <span class="hola__title-label sr-only">Hola, Halloween.</span>
+      </h1>
+      <p class="hola__output js__hola-output"><span class="sr-ony">Quedan </span>XX<span class="sr-only"> días.</span></p>
+    </hgroup>
   </main>
   <footer class="hola__footer">
-    <p><a href="">[LICENCIA]</a> <span class="hola__year js__hola-year">2023</span> - Hecho con mucha malafollá.</p>
+    <p><a href="" class="hola__link">[LICENCIA]</a> <span class="hola__year js__hola-year">2023</span> - Hecho con mucha malafollá.</p>
   </footer>
 </body>
 </html>

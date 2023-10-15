@@ -1,8 +1,8 @@
 const hola = (function() {
 
   const LITERALS = {
-    COUNTDOWN_PLURAL_TEXT: 'Quedan [XX] días.',
-    COUNTDOWN_SINGLE_TEXT: 'Solo queda [XX] día!!',
+    COUNTDOWN_PLURAL_TEXT: 'Faltan [XX] días.',
+    COUNTDOWN_SINGLE_TEXT: 'Solo falta [XX] día!!',
     HALLOWEEN_TEXT: 'BUAHAHAHAHA!',
     INIT_MESSAGE: '🎃 Hola!',
     HALLOWEEN_HAS_PASSED: 'Nos vemos el año que viene.',

@@ -1,0 +1,123 @@
+/* CONFIG */
+:root {
+  --color-orange: #ff9900;
+  --color-orange-alt: #ff6600;
+}
+
+.sr-only {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+
+
+
+
+/* PAGE */
+.hola {
+  font-family: Comic Sans MS, arial, sans-serif;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: linear-gradient(var(--color-orange), var(--color-orange-alt) 45%) center no-repeat var(--color-orange);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin: 0;
+}
+
+
+
+
+/* CONTENT */
+.hola__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.hola__group {
+  position: relative;
+}
+
+.hola__title {}
+
+.hola__title-icon {
+  font-size: 200px;
+  display: block;
+  position: relative;
+}
+
+.hola__title-icon::before,
+.hola__title-icon::after,
+.hola__group::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 98%;
+  width: 134px;
+  height: 38px;
+  background: black;
+  border-radius: 50%;
+  transform: translate(-50%, -190%);
+  z-index: -1;
+  filter:blur(14px);
+  opacity: .7;
+}
+
+.hola__title-icon::after {
+  background-color: #883F01;
+  z-index: -2;
+  transform: translate(-50%, -190%) scale(1.7);
+  opacity: .84;
+}
+
+.hola__group::before {
+  background-color: #F1EC0B;
+  z-index: -2;
+  transform: translate(-50%, -225%) scale(4);
+  opacity: .35;
+  filter:blur(40px);
+}
+
+.hola__output {
+  position: absolute;
+  font-size: 50px;
+  font-weight: bold;
+  left: 210px;
+  bottom: 205px;
+  min-width: 62px;
+  text-align: center;
+}
+
+.hola__output::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  content: '';
+  width: 80px;
+  height: 80px;
+  border: 3px solid transparent;
+  border-bottom-color: white;
+  border-radius: 50%;
+  transform: translate(-60%, -50%) rotate(-45deg);
+}
+
+
+
+
+/* FOOTER */
+.hola__footer {
+  background-color: #8f320b;
+  text-align: center;
+  color: #fff;
+}
+
+.hola__link {
+  color:  inherit;
+  text-decoration-color: #a3f00b;
+}
