@@ -2,6 +2,9 @@
 :root {
   --color-orange: #ff9900;
   --color-orange-alt: #ff6600;
+  --font-default: 16;
+  --balloon-font: 50;
+  --jack-font: 200;
 }
 
 .sr-only {
@@ -12,6 +15,10 @@
   position: absolute;
   white-space: nowrap; 
   width: 1px;
+}
+
+html {
+  font-size: calc(var(--font-default) * 1px);
 }
 
 
@@ -37,17 +44,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
+  padding: calc(50 / var(--font-default) * 1em) 0;
+  overflow: hidden;
 }
 
 .hola__group {
   position: relative;
+  font-size: clamp(calc(12 / var(--font-default) * 1em), 2vw, calc(18 / var(--font-default) * 1em));
 }
 
-.hola__title {}
+
+.hola__title {
+  font-size: inherit;
+}
 
 .hola__title-icon {
-  font-size: 200px;
+  font-size: calc(var(--jack-font) / var(--font-default) * 1em);
   display: block;
   position: relative;
 }
@@ -59,11 +71,11 @@
   position: absolute;
   left: 50%;
   top: 98%;
-  width: 134px;
-  height: 38px;
+  width: calc(134 / var(--jack-font) * 1em);
+  height: calc(38 / var(--jack-font) * 1em);
   background: black;
   border-radius: 50%;
-  transform: translate(-50%, -190%);
+  transform: translate(-50%, -174%);
   z-index: -1;
   filter:blur(14px);
   opacity: .7;
@@ -72,25 +84,29 @@
 .hola__title-icon::after {
   background-color: #883F01;
   z-index: -2;
-  transform: translate(-50%, -190%) scale(1.7);
+  transform: translate(-50%, -126%);
   opacity: .84;
+  width: calc(228 / var(--jack-font) * 1em);
+  height: calc(64 / var(--jack-font) * 1em);
 }
 
 .hola__group::before {
   background-color: #F1EC0B;
   z-index: -2;
-  transform: translate(-50%, -225%) scale(4);
+  transform: translate(-50%, -92%);
   opacity: .35;
   filter:blur(40px);
+  width: calc(536 / var(--font-default) * 1em);
+  height: calc(152 / var(--font-default) * 1em);
 }
 
 .hola__output {
   position: absolute;
-  font-size: 50px;
+  font-size: calc(var(--balloon-font) / var(--font-default) * 1em);
   font-weight: bold;
-  left: 210px;
-  bottom: 205px;
-  min-width: 62px;
+  left: calc(210 / var(--balloon-font) * 1em);
+  bottom: calc(205 / var(--balloon-font) * 1em);
+  min-width: calc(62 / var(--balloon-font) * 1em);
   text-align: center;
 }
 
@@ -99,9 +115,9 @@
   top: 100%;
   left: 0;
   content: '';
-  width: 80px;
-  height: 80px;
-  border: 3px solid transparent;
+  width: calc(80 / var(--balloon-font) * 1em);
+  height: calc(80 / var(--balloon-font) * 1em);
+  border: calc(3 / var(--balloon-font) * 1em) solid transparent;
   border-bottom-color: white;
   border-radius: 50%;
   transform: translate(-60%, -50%) rotate(-45deg);
@@ -115,6 +131,11 @@
   background-color: #8f320b;
   text-align: center;
   color: #fff;
+}
+
+.hola__footer-copy {
+  margin: 0;
+  padding: 1em;
 }
 
 .hola__link {
