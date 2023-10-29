@@ -6,6 +6,7 @@ Location: Alcorcón.
 
 /* THANKS */
 Adria: https://agual.netlify.app
+Amane: https://github.com/amanegalvez/
 
 /* SITE */
 Last update: 2023/10/14 
