@@ -3,9 +3,9 @@ const hola = (function() {
   const LITERALS = {
     COUNTDOWN_PLURAL_TEXT: 'Faltan [XX] días.',
     COUNTDOWN_SINGLE_TEXT: 'Solo falta [XX] día!!',
-    HALLOWEEN_TEXT: 'BUAHAHAHAHA!',
+    HALLOWEEN_TEXT: ['💬', '💀', '🪦', '🎃', '👻', '🦇', '🧛', '🧛‍♀️', '🧛', '🥶', '👽', '🧟', '🧟‍♀️', '🧙‍♂️', '🧙‍♀️', '🕷️', '🕸️', '🦄', '🔥', '⛈️', '🍭', '🎲', '🌋', '🪫', '🕯️', '⚱️', '⚰️', '🏺', '🔮', '🩸', '❤️‍🔥', ],
     INIT_MESSAGE: '🎃 Hola!',
-    HALLOWEEN_HAS_PASSED: 'Nos vemos el año que viene.',
+    HALLOWEEN_HAS_PASSED: '䷄',
   };
 
   const SELECTORS = {
@@ -63,11 +63,11 @@ const hola = (function() {
 
 
   /**
-   * [hideMessageParts description]
+   * Envuelve un texto para que solo se lea por lectores de pantalla
    *
-   * @param   {[type]}  part  [part description]
+   * @param   {string}  part  Cadena de texto a envolver
    *
-   * @return  {[type]}        [return description]
+   * @return  {string}        Cadena de texto para convertir a HTML
    */
   function hideMessageParts(part) {
       return `<span class="sr-only">${part}</span>`;
@@ -75,11 +75,11 @@ const hola = (function() {
 
 
   /**
-   * [formatMessage description]
+   * Formatea un mensaje para "ocultar visualemente" el texto que no es la cuenta atrás
    *
-   * @param   {[type]}  messageObj  [messageObj description]
+   * @param   {string}  messageObj  Mensaje que queremos que diga la calabaza
    *
-   * @return  {[type]}              [return description]
+   * @return  {[type]}              Mensaje formateado para que se vea la cuenta atrás, pero si vas con un lector de pantalla se lea un mensaje humano
    */
   function formatMessage(message) {
       return message
@@ -103,12 +103,27 @@ const hola = (function() {
 
 
   /**
+   * Selecciona una posición alaeatoria dentro de un Array
+   *
+   * @param   {array}  list  Lista de cosicas
+   *
+   * @return  {string}        cosica seleccionada
+   */
+  function randomSelectOne(list) {
+    const max = list.length - 1;
+    const index = parseInt(Math.random() * max);
+
+    return list[index];
+  }
+
+
+  /**
    * [getHalloweenMessage description]
    *
    * @return  {[type]}  [return description]
    */
   function getHalloweenMessage() {
-    let result = isHalloween ? LITERALS.HALLOWEEN_TEXT : LITERALS.HALLOWEEN_HAS_PASSED;
+    let result = isHalloween ? randomSelectOne(LITERALS.HALLOWEEN_TEXT) : LITERALS.HALLOWEEN_HAS_PASSED;
     
     if (!isHalloween && !hasHalloweenPassed) {
       result = getDaysPendingString();
